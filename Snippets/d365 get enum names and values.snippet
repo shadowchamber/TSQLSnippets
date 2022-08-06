@@ -1,0 +1,4 @@
+-- Source: https://ernestdmytrenko.blogspot.com/2021/08/get-enum-name-or-value-via-sql-for-d365f.html
+select t1.*, t2.* from ENUMIDTABLE t1 
+inner join ENUMVALUETABLE t2 on t1.ID=t2.ENUMID 
+where t1.NAME='InventTransType'
