@@ -1,4 +1,29 @@
--- Source: https://ernestdmytrenko.blogspot.com/2021/08/get-enum-name-or-value-via-sql-for-d365f.html
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Create Index Basic</Title>
+      <Shortcut></Shortcut>
+			<Description>Get the Enum name or value via SQL for D365F&O Source: https://ernestdmytrenko.blogspot.com/2021/08/get-enum-name-or-value-via-sql-for-d365f.html</Description>
+			<Author>Community</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+          <Literal>
+            <ID>SchemaName</ID>
+            <ToolTip>Name of the schema</ToolTip>
+            <Default>dbo</Default>
+          </Literal>
+			</Declarations>
+			<Code Language="SQL"><![CDATA[
 select t1.*, t2.* from ENUMIDTABLE t1 
 inner join ENUMVALUETABLE t2 on t1.ID=t2.ENUMID 
 where t1.NAME='InventTransType'
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
