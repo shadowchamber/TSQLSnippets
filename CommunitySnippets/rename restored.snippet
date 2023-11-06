@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+	<Header>
+	<Title>rename restored</Title>
+        <Shortcut></Shortcut>
+	<Description>source: https://stackoverflow.com/questions/7892334/get-size-of-all-tables-in-database</Description>
+	<Author>Community</Author>
+	<SnippetTypes>
+		<SnippetType>Expansion</SnippetType>
+	</SnippetTypes>
+	</Header>
+	<Snippet>
+		<Declarations>
+		</Declarations>
+		<Code Language="SQL">
+			<![CDATA[--set main db to single connections and drop the existing connections
+ALTER DATABASE AxDB SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+--rename datbase to db_old
+ALTER DATABASE AxDB MODIFY NAME = AxDB_old
+--set the old db to multi user
+ALTER DATABASE AxDB_old SET MULTI_USER
+--rename the new db to the main db name
+ALTER DATABASE AxDB_new MODIFY NAME = AxDB]]>
+		</Code>
+	</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
